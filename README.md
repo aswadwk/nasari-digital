@@ -10,29 +10,33 @@ composer install
 5. Update the database credentials in the .env file
 6. Run the following command in the terminal
 ```bash
+php artisan key:generate
+```
+7. Run the following command in the terminal
+```bash
 php artisan migrate
 ```
-7. Run database seeders
+8. Run database seeders
 ```bash
 php artisan db:seed
 ```
-8. Run the following command in the terminal
+9. Run the following command in the terminal
 ```bash
 php artisan serve
 ```
-9. Run the following command in the terminal
+10. Run the following command in the terminal
 ```bash
 pnpm install
 ```
-10. Run the following command in the terminal
+11. Run the following command in the terminal
 ```bash
 pnpm run dev
 ```
-11. Open the browser and go to the following URL
+12. Open the browser and go to the following URL
 ```bash
 http://localhost:8000
 ```
-12. You can login with the following credentials
+13. You can login with the following credentials
 ```bash
 email:test@example.com
 password:password
