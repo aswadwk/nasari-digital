@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Illuminate\Auth\Middleware\Authenticate;
+use Illuminate\Auth\Middleware\RedirectIfAuthenticated;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Authenticate::redirectUsing(function ($request) {
+            return $request->expectsJson()
+                ? response()->json(['message' => 'Unauthenticated'], 401)
+                : 'auth/login';
+        });
     }
 }
